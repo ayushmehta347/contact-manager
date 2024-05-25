@@ -1,4 +1,4 @@
-import React, {  useState } from 'react';
+import React from 'react';
 import ContactForm from './components/ContactForm';
 import ContactList from './components/ContactList';
 import { useSelector, useDispatch } from 'react-redux';
@@ -9,14 +9,10 @@ const Display: React.FC = () => {
   const dispatch = useDispatch();
   const selectedContact = useSelector(selectSelectedContact);
   
- 
-  const [cont, setCont] = useState(true); 
-  
 
   return (
   
       <div >
-        {cont && (
           <div className="container mx-auto p-4 ml-80">
             <h1 className="text-center text-4xl mb-10 font-bold">Contact Manager</h1>
             {!selectedContact && <ContactForm />}
@@ -36,7 +32,6 @@ const Display: React.FC = () => {
             )}
             {!selectedContact && <ContactList />}
           </div>
-        )}
       </div>
 
   );

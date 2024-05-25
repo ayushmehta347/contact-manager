@@ -11,15 +11,6 @@ const Display: React.FC = () => {
   
   const [map, setMap] = useState(false);
   const [cont, setCont] = useState(true); 
-  const [showContactForm, setShowContactForm] = useState(false);
-
-  useEffect(() => {
-    
-    const savedContacts = localStorage.getItem('contacts');
-    if (!savedContacts) {
-      setShowContactForm(true);
-    }
-  }, []);
 
   const handleContact = () => {
     setCont(true);
